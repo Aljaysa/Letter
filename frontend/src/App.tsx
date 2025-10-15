@@ -45,7 +45,7 @@ function App() {
     <HashRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<LoginScreen />} />
+        <Route path="/#/login" element={<LoginScreen />} />
         <Route path="/sign-up" element={<SignUpScreen />} />
         <Route path="/chats" element={<ChatsScreen />} />
         <Route path="/contacts" element={<ViewContactsScreen />} />
