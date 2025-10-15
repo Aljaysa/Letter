@@ -6,32 +6,37 @@ import SignUpScreen from './components/SignUpScreen';
 import LoginScreen from './components/LoginScreen';
 import {ViewContactsScreen} from './components/ViewContactsScreen';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Homepage />
+    },
+    {
+      path: '/login',
+      element: <LoginScreen />
+    },
+    {
+      path: '/sign-up',
+      element: <SignUpScreen />
+    },
+    {
+      path: '/chats',
+      element: <ChatsScreen />
+    },
+    {
+      path: '/contacts',
+      element: <ViewContactsScreen />
+    },
+    {
+      path: '/contacts/:initSelectedContactId',
+      element: <ViewContactsScreen />
+    },
+  ],
   {
-    path: '/',
-    element: <Homepage />
-  },
-  {
-    path: '/login',
-    element: <LoginScreen />
-  },
-  {
-    path: '/sign-up',
-    element: <SignUpScreen />
-  },
-  {
-    path: '/chats',
-    element: <ChatsScreen />
-  },
-  {
-    path: '/contacts',
-    element: <ViewContactsScreen />
-  },
-  {
-    path: '/contacts/:initSelectedContactId',
-    element: <ViewContactsScreen />
-  },
-]);
+    basename: '/Letter/' // 👈 add this here for GitHub Pages
+  }
+);
 
 function App() {
   return <RouterProvider router={router} />
