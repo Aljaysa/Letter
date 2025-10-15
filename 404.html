@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // GitHub Pages redirect trick for React Router
+      const redirectToIndex = () => {
+        const path = window.location.pathname;
+        const index = '/Letter/'; // your repo subpath
+        if (!path.startsWith(index)) return;
+
+        // Rewrite URL to index.html while keeping the path
+        const newPath = path.replace(index, '');
+        window.location.replace(index + 'index.html?redirect=' + newPath);
+      };
+      redirectToIndex();
+    </script>
+  </head>
+  <body></body>
+</html>
