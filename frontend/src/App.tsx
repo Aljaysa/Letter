@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route /*createHashRouter, RouterProvider*/ } from "react-router-dom";
+import { BrowserRouter, Routes, Route /*createHashRouter, RouterProvider*/ } from "react-router-dom";
 
 
 import Homepage from './components/Homepage';
@@ -42,16 +42,16 @@ const router = createHashRouter(
 */
 function App() {
    return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/#/login" element={<LoginScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
         <Route path="/sign-up" element={<SignUpScreen />} />
         <Route path="/chats" element={<ChatsScreen />} />
         <Route path="/contacts" element={<ViewContactsScreen />} />
         <Route path="/contacts/:initSelectedContactId" element={<ViewContactsScreen />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
